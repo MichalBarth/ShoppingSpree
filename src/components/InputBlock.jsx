@@ -10,7 +10,10 @@ const Add = () => {
                         <Button color="success" onClick="">Add</Button>
                     </InputGroupText>
                 </InputGroupAddon>
-                <Input placeholder="Item n." />
+                <Input
+                    onChange={(e)=>{
+                    e.target.value}}   
+                    placeholder="Item num. 3" />
             </InputGroup>
         </>
     )

@@ -1,12 +1,12 @@
 import {Alert} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const List = () => {
+const Item = () => {
     return (
         <>
-            <Alert color="success">Basket is empty.</Alert>
+            <p>item</p>
         </>
     )
 }
 
-export default List;
+export default Item;
