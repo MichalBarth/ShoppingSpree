@@ -1,18 +1,26 @@
 import './App.css';
 import React from "react";
 import {Container} from 'reactstrap'
-import Item from "./components/Item.jsx";
-import Add from "./components/InputBlock.jsx";
-import Navigation from "./components/NavBar";
+import {useState} from 'react';
+
+import Input from "./components/InputBlock.jsx";
+import Navigation from "./components/Navigation.jsx";
+import List from "./components/List.jsx";
 
 function App() {
+  const [list, setList] = useState([]);
+  const count = list.length;
+
+  const addItem = (value) => (
+    setList([...list, value])
+  )
+
   return (
       <>
-        <Navigation></Navigation>
+        <Navigation count={count}/>
         <Container>
-            <Item></Item>
-            <Item></Item>
-            <Add></Add>
+          <Input addItem={addItem}/>
+          <List value={list}/>
         </Container>
       </>
   );

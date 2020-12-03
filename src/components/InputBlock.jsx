@@ -1,22 +1,15 @@
-import {Input, Button, InputGroup, InputGroupAddon, InputGroupText} from 'reactstrap';
+import {Input, Button } from 'reactstrap';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Add = () => {
+function InputBlock({addItem}) {
+    const [value, setValue] = useState("");
     return (
         <>
-            <InputGroup>
-                <InputGroupAddon addonType="append">
-                    <InputGroupText>
-                        <Button color="success" onClick="">Add</Button>
-                    </InputGroupText>
-                </InputGroupAddon>
-                <Input
-                    onChange={(e)=>{
-                    e.target.value}}   
-                    placeholder="Item num. 3" />
-            </InputGroup>
+            <Input onChange={e => setValue(e.target.value)} placeholder="Item name" />
+            <Button onClick={() => addItem(value)}>Add item</Button>
         </>
     )
 }
 
-export default Add;
+export default InputBlock;

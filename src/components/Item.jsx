@@ -1,12 +1,10 @@
-import {Alert} from 'reactstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import { ListGroupItem } from 'reactstrap';
 
-const Item = () => {
-    return (
-        <>
-            <p>item</p>
-        </>
-    )
-}
+const Item = ({item}) => (
+    <ListGroupItem>
+        {item}
+    </ListGroupItem>
+)
 
 export default Item;
