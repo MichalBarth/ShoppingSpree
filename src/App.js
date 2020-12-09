@@ -19,12 +19,16 @@ function App() {
     setList([...list])
   }
 
+  const copyItem = (value) => (
+    setList([...list, value])
+  )
+
   return (
       <>
         <Navigation count={count}/>
         <div className="kontas">
           <Input addItem={addItem}/>
-          <List removeItem={removeItem} value={list}/>
+          <List copyItem={copyItem} removeItem={removeItem} value={list}/>
         </div>
       </>
   );
