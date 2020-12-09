@@ -1,6 +1,5 @@
 import './App.css';
 import React from "react";
-import {Container} from 'reactstrap'
 import {useState} from 'react';
 
 import Input from "./components/InputBlock.jsx";
@@ -15,13 +14,18 @@ function App() {
     setList([...list, value])
   )
 
+  const removeItem = (index) => {
+    list.splice(index, 1)
+    setList([...list])
+  }
+
   return (
       <>
         <Navigation count={count}/>
-        <Container>
+        <div className="kontas">
           <Input addItem={addItem}/>
-          <List value={list}/>
-        </Container>
+          <List removeItem={removeItem} value={list}/>
+        </div>
       </>
   );
 }

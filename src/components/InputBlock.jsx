@@ -1,4 +1,4 @@
-import {Input, Button } from 'reactstrap';
+import {Input, Button, InputGroup, InputGroupAddon } from 'reactstrap';
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -6,8 +6,12 @@ function InputBlock({addItem}) {
     const [value, setValue] = useState("");
     return (
         <>
-            <Input onChange={e => setValue(e.target.value)} placeholder="Item name" />
-            <Button onClick={() => addItem(value)}>Add item</Button>
+            <InputGroup>
+                <Input onChange={e => setValue(e.target.value)} placeholder="Item name" />
+                <InputGroupAddon addonType="prepend">
+                    <Button onClick={() => addItem(value)}>Add item</Button>
+                </InputGroupAddon>
+            </InputGroup>
         </>
     )
 }
